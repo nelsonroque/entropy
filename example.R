@@ -170,16 +170,17 @@ entropy_unweighted <- compute_entropy2(
 # (B) Weighted diversity per day: minutes * grid_memory_error_distance
 # Interpretation: "weighted minutes" might reflect more 'impactful' or 'effortful'
 # screen time if the weight captures cognitive load, error, intensity, etc.
-entropy_weighted <- compute_entropy2(
-  screen_time,
-  group_var = day,
-  value_var = minutes,
-  indices = c("shannon", "simpson", "gini"),
-  shannon_base = 2,
-  normalize_shannon = TRUE,
-  weight_var = grid_memory_error_distance,
-  keep_vars = TRUE
-)
+# TODO: fix issue with weighted version
+# entropy_weighted <- compute_entropy2(
+#   screen_time,
+#   group_var = day,
+#   value_var = minutes,
+#   indices = c("shannon", "simpson", "gini"),
+#   shannon_base = 2,
+#   normalize_shannon = TRUE,
+#   weight_var = grid_memory_error_distance,
+#   keep_vars = TRUE
+# )
 
 # =============================================================================
 # Check Assumptions: Correlations Between Indices
